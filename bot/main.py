@@ -274,7 +274,7 @@ async def mas(message: types.Message):
         connection = sqlite3.connect('bot.db')
         connection.row_factory = sqlite3.Row
         cursor = connection.cursor()
-        cursor.execute('UPDATE bot SET name=? WHERE id=?',(message.text, types.User.get_current()['id']))
+        cursor.execute('UPDATE bot SET genderquestion=? WHERE id=?',(message.text, types.User.get_current()['id']))
         connection.commit()
         await message.answer('Данные обновлены')
 
